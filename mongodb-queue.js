@@ -116,7 +116,7 @@ Queue.prototype.get = async function (opts, callback) {
       visible: nowPlusSecs(visibility),
     },
   };
-  const msg = await self.col.findOne(query);
+  let msg = await self.col.findOne(query);
   if (msg) {
     await self.col.updateOne(query, update);
     msg = { ...msg, ...update.$set };
@@ -170,7 +170,7 @@ Queue.prototype.ack = async function (ack, callback) {
     },
   };
 
-  const msg = await self.col.findOne(query);
+  let msg = await self.col.findOne(query);
   if (msg) {
     await self.col.updateOne(query, update);
     msg = { ...msg, ...update.$set };
