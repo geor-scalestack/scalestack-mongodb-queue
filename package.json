@@ -18,7 +18,7 @@
     "tape": "^4.10.1"
   },
   "peerDependencies": {
-    "mongodb": "^4"
+    "mongodb": "^4.5.0"
   },
   "homepage": "https://github.com/mhassan1/mongodb-queue-up",
   "repository": {
